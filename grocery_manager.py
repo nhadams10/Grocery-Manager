@@ -1,5 +1,5 @@
-from recipes import chickpea_chili_recipe
-from recipes import apple_crumb_cake_recipe
+from cookbook import chickpea_chili
+from cookbook import apple_crumb_cake
 
 #recipe = input("What do you want to cook? ")
 #print(recipe + " Is this correct?")
@@ -19,8 +19,8 @@ class Recipe(dict):
 
         return r
 
-a = Recipe(apple_crumb_cake_recipe)
-b = Recipe(chickpea_chili_recipe)
+a = Recipe(apple_crumb_cake)
+b = Recipe(chickpea_chili)
 c = a + b
 
 print(c)
