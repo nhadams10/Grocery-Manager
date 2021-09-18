@@ -1,26 +1,26 @@
 from recipes import chickpea_chili_recipe
 from recipes import apple_crumb_cake_recipe
-#from collections import defaultdict
-from collections import Counter
 
 #recipe = input("What do you want to cook? ")
 #print(recipe + " Is this correct?")
 
-A = Counter(chickpea_chili_recipe)
-B = Counter(apple_crumb_cake_recipe)
-#print (A + B)
+class Recipe(dict):
+    def __add__(self, oth):
+        r = self.copy()
 
-C = A + B
-#dd = defaultdict(list)
+        try:
+            for key, val in oth.items():
+                if key in r:
+                    r[key] += val  # You can custom it here
+                else:
+                    r[key] = val
+        except AttributeError:  # In case oth isn't a dict
+            return NotImplemented  # The convention when a case isn't handled
 
-#for d in (chickpea_chili_recipe, apple_crumb_cake_recipe):
-#  for key, value in d.items():
-#    dd[key].append(value)
+        return r
 
-#groceries = {}
+a = Recipe(apple_crumb_cake_recipe)
+b = Recipe(chickpea_chili_recipe)
+c = a + b
 
-#for d in (chickpea_chili_recipe, apple_crumb_cake_recipe):
-  
-print(C)
-#print(chickpea_chili_recipe['chickpea cans'])
-#print(dd)
+print(c)
