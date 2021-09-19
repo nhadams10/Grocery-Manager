@@ -1,8 +1,6 @@
 #RECIPE IMPORTS
-#Each recipe must be individually imported from cookbook
-#Going to try and refine this to import a single JSON file
-from cookbook import chickpea_chili
-from cookbook import apple_crumb_cake
+#Imports all recipe dictionaries from cookbook
+from cookbook import *
 
 #This defines a recipe class which allows dictionaries to be added together
 class Recipe(dict):
@@ -23,11 +21,15 @@ class Recipe(dict):
 #This is the empty dictionary we will use in our while loop
 groceries_dict = {}
 
-#Each recipe is assigned to a unique variable
+
+
+# 1. Each recipe is assigned to a unique variable
 a = Recipe(apple_crumb_cake)
 b = Recipe(chickpea_chili)
+c = Recipe(tamari_lime_tempeh)
+d = Recipe(red_lentil_pesto_pasta)
 
-#Terminal text to print user instructions
+# 2. Terminal text to print user instructions
 print(
 '''
  ––––––––––––––––––––––––––––––––––––––––
@@ -35,6 +37,8 @@ print(
 | - - - - - - - - - - - - - - - - - - - -|
 |a - apple crumb cake                    |
 |b - chickpea chili                      |
+|c - tamari lime tempeh                  |
+|d - red lentil pesto pasta              |
 | - - - - - - - - - - - - - - - - - - - -|
 |x - exit                                |
  ––––––––––––––––––––––––––––––––––––––––
@@ -44,7 +48,7 @@ print(
 #Terminal text asking the user for input
 recipe = input("What do you want to cook? ")
 
-#Loop which allows the user to input multiple recipies and combines them into a single dictionary called groceries_dict
+# 3. Loop which allows user to input multiple recipies & combines them into a single dictionary called groceries_dict
 while True:
     if recipe == "x":
         break
@@ -53,6 +57,12 @@ while True:
         recipe = input("What else do you want to cook? ")
     elif recipe == "b":
         groceries_dict = Recipe(groceries_dict) + b
+        recipe = input("What else do you want to cook? ")
+    elif recipe == "c":
+        groceries_dict = Recipe(groceries_dict) + c
+        recipe = input("What else do you want to cook? ")
+    elif recipe == "d":
+        groceries_dict = Recipe(groceries_dict) + d
         recipe = input("What else do you want to cook? ")
     else:
         print(
