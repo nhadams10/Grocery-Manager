@@ -23,8 +23,6 @@ class Recipe(dict):
 #This is the empty dictionary we will use in our while loop
 groceries_dict = {}
 
-
-
 # 1. Each recipe is assigned to a unique variable
 a = Recipe(apple_crumb_cake)
 b = Recipe(chickpea_chili)
@@ -91,30 +89,32 @@ def print_grocery_list(dct):
 #This prints the finalized grocery list
 print_grocery_list(groceries_dict)
 
-#Want to add a feature using an SMS API to send the user a text with their grocery list for ease of access in the supermarket
+#-------------------------------
+#Feature using Twilio SMS API to send user a text with grocery list for easy access in the supermarket
 
-#Want to write a program that produces the grocery list as an output in a single string
+#Program that produces the grocery list as an output in a single string
 def create_sms_grocery_list(dct):
     sms_grocery_list_body = "Grocery List:\n\n"
     for item, amount in dct.items():
         sms_grocery_list_body = sms_grocery_list_body + "-{} {}\n".format(amount, item)
     return sms_grocery_list_body
 
-#print(create_sms_grocery_list(groceries_dict))
-
-#ENV Variable not working, hard coded here
-#YOUR_PHONE_NUMBER = '+82555'
-
-#Twilio Magic
+#Establishes the Twilio user account
 account_sid = os.environ['TWILIO_ACCOUNT_SID']
 auth_token = os.environ['TWILIO_AUTH_TOKEN']
 client = Client(account_sid, auth_token)
 
+#Establishes the sending and receiving numbers
+#When using locally can change right side of statements to be explicit numbers
+twilio_phone_number = os.environ['SENDING_PHONE_NUMBER']
+receiving_number = os.environ['YOUR_PHONE_NUMBER']
+
 message = client.messages \
                 .create(
                      body=create_sms_grocery_list(groceries_dict),
-                     from_=SENDING_PHONE_NUMBER,
-                     to=YOUR_PHONE_NUMBER
+                     from_=twilio_phone_number,
+                     to=receiving_number
                  )
 
-print(message.sid)
+#Uncomment this for the message sid when needed for diagnostic purposes
+#print(message.sid)
