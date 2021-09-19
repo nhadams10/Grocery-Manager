@@ -37,7 +37,6 @@ print(
 recipe = input("What do you want to cook? ")
 
 while True:
-    #recipe = input("What do you want to cook?")
     if recipe == "x":
         break
     elif recipe == "a":
@@ -56,12 +55,8 @@ Please enter a valid recipe or x to exit
             )
         recipe = input("What else do you want to cook? ")
 
-
 #print(recipe + " Is this correct?")
 #this should be updated to confirm what the user wants to cook
-
-#groceries_dict = a + b
-# this should be updated to responsively create a dictionary for all the needed groceries
 
 grocery_list = '''
 6 Apples
