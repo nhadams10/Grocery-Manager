@@ -1,6 +1,8 @@
 #RECIPE IMPORTS
 #Imports all recipe dictionaries from cookbook
 from cookbook import *
+import os
+from twilio.rest import Client
 
 #This defines a recipe class which allows dictionaries to be added together
 class Recipe(dict):
@@ -90,3 +92,29 @@ def print_grocery_list(dct):
 print_grocery_list(groceries_dict)
 
 #Want to add a feature using an SMS API to send the user a text with their grocery list for ease of access in the supermarket
+
+#Want to write a program that produces the grocery list as an output in a single string
+def create_sms_grocery_list(dct):
+    sms_grocery_list_body = "Grocery List:\n\n"
+    for item, amount in dct.items():
+        sms_grocery_list_body = sms_grocery_list_body + "-{} {}\n".format(amount, item)
+    return sms_grocery_list_body
+
+#print(create_sms_grocery_list(groceries_dict))
+
+#ENV Variable not working, hard coded here
+#YOUR_PHONE_NUMBER = '+82555'
+
+#Twilio Magic
+account_sid = os.environ['TWILIO_ACCOUNT_SID']
+auth_token = os.environ['TWILIO_AUTH_TOKEN']
+client = Client(account_sid, auth_token)
+
+message = client.messages \
+                .create(
+                     body=create_sms_grocery_list(groceries_dict),
+                     from_=SENDING_PHONE_NUMBER,
+                     to=YOUR_PHONE_NUMBER
+                 )
+
+print(message.sid)
