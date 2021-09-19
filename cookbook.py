@@ -1,3 +1,3 @@
-chickpea_chili = {'dictionaries_added': 1, 'chickpea cans': 2, 'large yellow onion': 1, 'bell peppers': 2, 'large crown broccoli': 1, 'garlic cloves': 4,'lime': 1}
+chickpea_chili = {'dictionaries_added': 1, 'chickpea can(s)': 2, 'large yellow onion(s)': 1, 'bell pepper(s)': 2, 'large crown(s) broccoli': 1, 'garlic clove(s)': 4,'lime(s)': 1}
 
-apple_crumb_cake = {'dictionaries_added': 1, 'flour (g)': 400, 'vegan butter (g)': 200, 'sugar (g)': 350, 'cinammon (tsp)': 2, 'apples (kg)': 1, 'lemon': (0.5)}
+apple_crumb_cake = {'dictionaries_added': 1, 'g flour': 400, 'g vegan butter': 200, 'g sugar': 350, 'tsp cinammon': 2, 'kg apples': 1, 'lemon(s)': (0.5)}
