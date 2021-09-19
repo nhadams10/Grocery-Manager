@@ -9,4 +9,6 @@ I have identified a few key pieces to make this work:
   3. A way to combine dictionaries into a single dictionary
   4. A way to output the final dictionary into a user friendly grocery list format
 
-While I have completed the Python Codecademy course, this is my first independent project. Thanks for checking it out!
+While I have completed the Python Codecademy course, this is my first independent project. 
+
+Thanks for checking it out!
