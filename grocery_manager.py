@@ -22,24 +22,39 @@ a = Recipe(apple_crumb_cake)
 b = Recipe(chickpea_chili)
 
 print(
-    '''
-    Enter the letter for your desired recipe
-    a - apple crumb cake
-    b - chickpea chili
-    x - exit
-    '''
+'''
+ ––––––––––––––––––––––––––––––––––––––––
+|Enter the letter for your desired recipe|
+| - - - - - - - - - - - - - - - - - - - -|
+|a - apple crumb cake                    |
+|b - chickpea chili                      |
+| - - - - - - - - - - - - - - - - - - - -|
+|x - exit                                |
+ ––––––––––––––––––––––––––––––––––––––––
+'''
 )
 
+recipe = input("What do you want to cook? ")
+
 while True:
-    recipe = input("What do you want to cook?")
+    #recipe = input("What do you want to cook?")
     if recipe == "x":
         break
     elif recipe == "a":
         groceries_dict = Recipe(groceries_dict) + a
+        recipe = input("What else do you want to cook? ")
     elif recipe == "b":
         groceries_dict = Recipe(groceries_dict) + b
+        recipe = input("What else do you want to cook? ")
     else:
-        print("Please enter a valid recipe or x to exit")
+        print(
+'''
+- - - - - - - - - - - - - - - - - - - - -
+Please enter a valid recipe or x to exit
+- - - - - - - - - - - - - - - - - - - - -
+'''
+            )
+        recipe = input("What else do you want to cook? ")
 
 
 #print(recipe + " Is this correct?")
