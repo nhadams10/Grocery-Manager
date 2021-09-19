@@ -16,7 +16,7 @@ class Recipe(dict):
 
         return r
 
-grocery_dict = Recipe({})
+groceries_dict = Recipe({})
 
 a = Recipe(apple_crumb_cake)
 b = Recipe(chickpea_chili)
@@ -35,9 +35,9 @@ while True:
     if recipe == "x":
         break
     elif recipe == "a":
-        grocery_dict += a
+        groceries_dict = Recipe(groceries_dict) + a
     elif recipe == "b":
-        grocery_dict += b
+        groceries_dict = Recipe(groceries_dict) + b
     else:
         print("Please enter a valid recipe or x to exit")
 
@@ -45,7 +45,7 @@ while True:
 #print(recipe + " Is this correct?")
 #this should be updated to confirm what the user wants to cook
 
-#grocery_dict = a + b
+#groceries_dict = a + b
 # this should be updated to responsively create a dictionary for all the needed groceries
 
 grocery_list = '''
@@ -54,4 +54,4 @@ grocery_list = '''
 '''
 #this should be updated to convert output from a dictionary to a user-friendly list
 
-print(grocery_dict)
+print(groceries_dict)
