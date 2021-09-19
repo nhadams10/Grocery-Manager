@@ -2,9 +2,9 @@
 
 **My first Python repo!**
 
-*Here I am building a basic program which will allow users to input the recipes they want to cook and receive a grocery list as the output.*
+Here I am building a basic program which will allow users to input the recipes they want to cook and receive a grocery list as the output.
 
-I have identified a few key pieces to make this work:
+*I have identified a few key pieces to make this work:*
   1. A way to get input from the user on which recipes they want to cook
   2. Recipes, which are stored as dictionaries with the key being the ingredient names and the value being an integer amount
   3. A way to combine dictionaries into a single dictionary
@@ -18,7 +18,7 @@ While I have completed the Python Codecademy course, this is my first independen
 
 >To get the Twilio API part of this program working on your own device there are a few steps you should take\*:
 >  1. Install Homebrew
->  2. Run the following command: `brew tap twilio/brew && brew install twilio`
+>  2. Run the following command:<br/> `brew tap twilio/brew && brew install twilio`
 >  3. Set the following environment variables<br/>
 >    `TWILIO_ACCOUNT_SID`<br/>
 >    `TWILIO_AUTH_TOKEN`<br/>
